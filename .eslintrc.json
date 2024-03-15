@@ -1,0 +1,64 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended",
+      "next:recommended",
+      "plugin:react-hooks/recommended"
+      ],
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react-hooks/exhaustive-deps": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], 
+        "jsx-a11y/accessible-emoji": "off",
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": ["Link"],
+                "specialLink": ["hrefLeft", "hrefRight"],
+                "aspects": ["invalidHref", "preferButton"]
+            }
+        ],
+        "prefer-destructuring": ["error", {
+            "VariableDeclarator": {
+                "array": false,
+                "object": true
+                },
+                "AssignmentExpression": {
+                "array": true,
+                "object": true
+                }
+            }, {
+                "enforceForRenamedProperties": false
+        }]
+    },
+    "globals": {
+        "React": "writable"
+    },
+    "settings": {
+        "react": {
+            "version": "18.1.0"
+        }
+    
+    } 
+}

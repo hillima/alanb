@@ -1,0 +1,358 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/futura.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/futura.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'CircularStdBold';
+  src: url('/fonts/CircularStd-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'CircularStdMedium';
+  src: url('/fonts/CircularStd-Medium.woff') format('woff');
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'CircularStd';
+}
+
+*:focus-visible {
+  outline-color: #7B0A75;
+}
+*:focus {
+  outline: none;
+}
+
+.main-wrap{
+  display: flex;
+  width: 100%;
+}
+.section-wrap{
+  width: 100%;
+  margin-left: 100px;
+}
+
+.carousel-root{
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 18px;
+}
+body .wallet-selector{
+  background-color:  rgba(5, 34, 81, 0.5);
+}
+#explore-card-img{
+  border-radius: 18px;
+  object-fit: cover;
+  height: 500px;
+}
+@media (max-width: 1280px){
+  .section-wrap{
+    width: calc(100% - 100px);
+  }
+}
+.modal-img{
+  min-width: 529px;
+  min-height: 529px;
+  border-radius: 16px;
+}
+@media (max-width: 568px) {
+  #explore-card-img{
+    height: 100%;
+  }
+  .section-wrap{
+    width: 100%;
+  }
+  .BackOverlay {
+    height: 91.2%;
+  }
+  .carousel .slider-wrapper {
+    width: calc(100% - 40px);
+    overflow: hidden;
+  }
+  .modal-img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    min-width: unset;
+    min-height: unset;
+  }
+}
+.carousel .carousel-status{
+  display: none;
+}
+.carousel.carousel-slider{
+  display: flex;
+  align-items: center;
+  max-height: 500px;
+}
+div.carousel.carousel-slider{
+  overflow: unset;
+  position: initial;
+}
+.carousel .slider-wrapper{
+  max-height: 500px;
+}
+.carousel .slide{
+  max-height: 500px;
+}
+.react-toggle {
+  touch-action: pan-x;
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-toggle-screenreader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.react-toggle--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+.react-toggle-track {
+  width: 50px;
+  height: 24px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: #4D4D4D;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #000000;
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: #7B0A75;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: #7B0A75;
+}
+
+.react-toggle-track-check {
+  position: absolute;
+  width: 14px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  left: 8px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-check {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle-track-x {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  right: 10px;
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-x {
+  opacity: 0;
+}
+
+.react-toggle-thumb {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #4D4D4D;
+  border-radius: 50%;
+  background-color: #FAFAFA;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  left: 27px;
+  border-color: #7B0A75;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 3px 2px #7B0A75;
+  -moz-box-shadow: 0px 0px 3px 2px #7B0A75;
+  box-shadow: 0px 0px 2px 3px #7B0A75;
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 5px 5px #7B0A75;
+  -moz-box-shadow: 0px 0px 5px 5px #7B0A75;
+  box-shadow: 0px 0px 5px 5px #7B0A75;
+}
+.react-select__menu{
+  height: 150px;
+  overflow-y: scroll;
+}
+
+.react-select__menu div:first-child{
+  overflow-y: unset;
+}
+[data-theme='dark'] .react-select__control{
+  background-color: #1a0f2d !important;
+}
+.react-select__control{
+    margin-top: 7px;
+    -webkit-box-align: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    cursor: default;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    min-height: 50px;
+    position: relative;
+    transition: all 100ms ease 0s;
+    box-sizing: border-box;
+    background-color: #f7f9fa !important;
+    outline: 0px !important;
+    border: none !important;
+    height: auto;
+    min-height: 48px;
+    border-radius:8px!important;
+}
+.react-select__control--is-focused { 
+    box-shadow: none!important;
+}
+.react-select__indicator-separator{
+  display: none;
+}
+ .react-select__multi-value div{
+  color: #fff!important;
+}
+.react-select__multi-value{
+  background-color: #7a0a75!important;
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 180%;
+  letter-spacing: 0.01em;
+  color: #fff!important;
+  padding: 3px 12px;
+  border-radius:6px;
+}
+.react-select__multi-value__remove:hover {
+  background:none!important;
+  color: inherit!important;
+}
+
+[multiple]:focus, [type=date]:focus, [type=datetime-local]:focus, [type=email]:focus, [type=month]:focus, [type=number]:focus, [type=password]:focus, [type=search]:focus, [type=tel]:focus, [type=text]:focus, [type=time]:focus, [type=url]:focus, [type=week]:focus, select:focus, textarea:focus {
+  outline: none;
+}
+
+[data-theme='dark'] #menu- .MuiPaper-root{
+  background-color: #1a0f2d;
+  margin-top:10px;
+  border-radius: 8px;
+}
+
+[data-theme='light'] #menu- .MuiPaper-root{
+  background-color: #f3f6f7;
+  margin-top:10px;
+  border-radius: 8px;
+}
+
+[data-theme='dark'] .Mui-selected {
+  background-color:none;
+  color: #FFFFFF;
+}
+
+[data-theme='light'] .Mui-selected {
+  background-color:none;
+  color: #052251;
+}
+
+[data-theme='dark'] .MuiMenuItem-root {
+  color: #9BA2AD;
+}
+
+[data-theme='light'] .MuiMenuItem-root {
+  color: #9BA2AD;
+}
+
+.MuiOutlinedInput-notchedOutline{
+  border: none;
+}
